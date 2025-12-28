@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/com.antonio.iot.iml" filepath="$PROJECT_DIR$/com.antonio.iot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/iot-electric-simulator.iml" filepath="$PROJECT_DIR$/iot-electric-simulator.iml" />
     </modules>
   </component>
 </project>
