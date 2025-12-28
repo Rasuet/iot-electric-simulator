@@ -9,23 +9,23 @@ public class ContadorController {
 
     public void leerDatosDispositivo(String nombreArchivo) {
         try {
-            // La barra "/" al principio es clave: busca en la raíz de 'resources'
-            InputStream is = getClass().getResourceAsStream("/" + nombreArchivo);
+            // Intentamos cargar el archivo desde la raíz de resources
+            InputStream is = getClass().getClassLoader().getResourceAsStream(nombreArchivo);
 
             if (is == null) {
-                System.out.println("¡Error! No encuentro el archivo: " + nombreArchivo);
-                return;
+                // Si falla el anterior, probamos con la barra inclinada
+                is = getClass().getResourceAsStream("/" + nombreArchivo);
             }
 
-            BufferedReader reader = new BufferedReader(new InputStreamReader(is));
-            String linea;
-            System.out.println("--- Iniciando Lectura del Contador ---");
-            while ((linea = reader.readLine()) != null) {
-                System.out.println(linea);
+            if (is != null) {
+                BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+                System.out.println("--- DATOS DEL CONTADOR ---");
+                reader.lines().forEach(System.out::println);
+            } else {
+                System.out.println("¡Error! No se encuentra " + nombreArchivo + " en la carpeta resources.");
             }
-
         } catch (Exception e) {
-            System.out.println("Ocurrió un error: " + e.getMessage());
+            e.printStackTrace();
         }
     }
 }
