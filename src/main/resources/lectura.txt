@@ -1,0 +1,6 @@
+PROYECTO: IO Electric Simulator
+ESTADO: Activo
+ID_CONTADOR: FENIX-001
+CONSUMO_ACTUAL: 145.8 kWh
+FECHA: 2025-12-28
+MENSAJE: Sistema operando correctamente para bebé sirena.
